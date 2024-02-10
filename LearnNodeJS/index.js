@@ -1,5 +1,9 @@
 // importing 
-const http = require("http");
+import http from 'http';
+import { generatePercent } from './features.js';
+
+// calling module
+console.log(generatePercent())
 
 // creating server
 const server = http.createServer((req,res)=>{
