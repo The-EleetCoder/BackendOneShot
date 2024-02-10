@@ -1,16 +1,19 @@
 // importing 
 import http from 'http';
 import { generatePercent } from './features.js';
+import fs from 'fs'; // used to interact with files 
 
 // calling module
 console.log(generatePercent())
+
+const data = fs.readFileSync('./index.html');
 
 // creating server
 const server = http.createServer((req,res)=>{
 
     // routing
     if (req.url === '/'){
-        res.end("<h1>Home Page</h1>")
+        res.end(data);
     }
     else if (req.url === '/about'){
         res.end("<h1>About Page</h1>");
