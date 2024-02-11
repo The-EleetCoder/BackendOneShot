@@ -2,11 +2,11 @@ import express from 'express';
 
 const app = express();
 
+// setting up view engine
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-    res.json({
-        success: true,
-        package: []
-    })
+    res.render('index', {name: 'Jai'})
 })
 
 app.listen(5000,()=>{
